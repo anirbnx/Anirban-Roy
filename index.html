@@ -5,18 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anirban Roy | Official App</title>
     
-    <!-- PWA Settings -->
+    <!-- PWA Setup -->
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#1e3a8a">
-    <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/5832/5832416.png">
 
-    <!-- Styles & Fonts -->
+    <!-- Design Assets -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap');
-        body { font-family: 'Plus Jakarta Sans', sans-serif; -webkit-tap-highlight-color: transparent; }
+        
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            -webkit-tap-highlight-color: transparent; 
+            background-color: #fcfcfc;
+        }
 
+        /* Premium Brand Gradient */
         .brand-name {
             background: linear-gradient(to right, #1e3a8a, #3b82f6, #b45309);
             -webkit-background-clip: text;
@@ -24,14 +30,20 @@
             font-weight: 800;
         }
 
+        /* Luxury Card Styling */
         .luxury-card {
             background: #ffffff;
             border: 1px solid #f1f5f9;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
         }
 
-        .luxury-card:active { transform: scale(0.96); }
+        .luxury-card:active {
+            transform: scale(0.96);
+            background-color: #f8fafc;
+        }
 
+        /* Background Decor Icons */
         .card-icon-bg {
             position: absolute;
             right: -10px;
@@ -45,37 +57,38 @@
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     </style>
 </head>
-<body class="bg-[#fcfcfc] pb-32">
+<body class="pb-32">
 
-    <!-- Navbar -->
+    <!-- Top Navbar -->
     <nav class="bg-white/90 backdrop-blur-md px-6 py-5 flex justify-between items-center sticky top-0 z-50 border-b border-slate-50">
         <div class="flex items-center gap-3">
             <div class="w-10 h-10 bg-blue-700 rounded-xl flex items-center justify-center text-white text-lg font-bold shadow-lg shadow-blue-200">AR</div>
             <span class="brand-name text-2xl tracking-tighter uppercase">Anirban Roy</span>
         </div>
-        <div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-blue-600">
+        <div onclick="location.href='profile.html'" class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-blue-600 cursor-pointer">
             <i class="fa-solid fa-circle-user text-2xl"></i>
         </div>
     </nav>
 
-    <!-- Dynamic Hero Banner -->
+    <!-- Dynamic Hero Banner (Auto-Switching) -->
     <section class="m-5 relative overflow-hidden rounded-[2.5rem] h-56 shadow-2xl shadow-blue-100">
         <div id="banner-container" class="w-full h-full">
+            <!-- Initial Banner -->
             <div class="banner-fade w-full h-full bg-[#1e293b] p-8 text-white flex flex-col justify-center relative">
-                <span class="bg-blue-500 text-[10px] font-bold px-3 py-1 rounded-full w-fit mb-3 uppercase tracking-widest">Target 2026</span>
+                <span class="bg-blue-500 text-[10px] font-bold px-3 py-1 rounded-full w-fit mb-3 uppercase tracking-widest font-sans">Target 2026</span>
                 <h2 class="text-3xl font-extrabold leading-tight uppercase">SSC GD<br><span class="text-blue-400">MISSION BATCH</span></h2>
-                <button class="mt-5 bg-white text-slate-900 w-fit px-8 py-2.5 rounded-2xl text-xs font-bold shadow-lg uppercase tracking-wider">Start Learning</button>
+                <button onclick="location.href='my-courses.html'" class="mt-5 bg-white text-slate-900 w-fit px-8 py-2.5 rounded-2xl text-xs font-bold shadow-lg uppercase tracking-wider">Join Now</button>
             </div>
         </div>
     </section>
 
-    <!-- App Categories -->
+    <!-- Main Navigation Categories -->
     <main class="px-6 space-y-5">
         <h3 class="text-[10px] font-bold text-slate-400 uppercase tracking-[0.25em] mb-4">Exam Prep Categories</h3>
         
         <!-- SSC Card -->
-        <div onclick="window.location.href='#ssc'" class="luxury-card relative overflow-hidden p-6 rounded-[2rem] flex items-center gap-5 shadow-sm shadow-slate-200">
-            <div class="w-14 h-14 bg-orange-50 text-orange-600 rounded-2xl flex items-center justify-center text-2xl shadow-inner">
+        <div onclick="location.href='ssc-exams.html'" class="luxury-card relative overflow-hidden p-6 rounded-[2rem] flex items-center gap-5 shadow-sm shadow-slate-200">
+            <div class="w-14 h-14 bg-orange-50 text-orange-600 rounded-2xl flex items-center justify-center text-2xl">
                 <i class="fa-solid fa-shield-halved"></i>
             </div>
             <div>
@@ -86,8 +99,8 @@
         </div>
 
         <!-- Railway Card -->
-        <div onclick="window.location.href='#railway'" class="luxury-card relative overflow-hidden p-6 rounded-[2rem] flex items-center gap-5 shadow-sm shadow-slate-200">
-            <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center text-2xl shadow-inner">
+        <div onclick="location.href='railway-exams.html'" class="luxury-card relative overflow-hidden p-6 rounded-[2rem] flex items-center gap-5 shadow-sm shadow-slate-200">
+            <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center text-2xl">
                 <i class="fa-solid fa-train-subway"></i>
             </div>
             <div>
@@ -97,57 +110,59 @@
             <i class="fa-solid fa-train-subway card-icon-bg"></i>
         </div>
 
-        <!-- Test Series Card -->
-        <div onclick="window.location.href='#test'" class="luxury-card relative overflow-hidden p-6 rounded-[2rem] flex items-center gap-5 bg-blue-600 text-white shadow-xl shadow-blue-200">
-            <div class="w-14 h-14 bg-white/20 text-white rounded-2xl flex items-center justify-center text-2xl backdrop-blur-md">
+        <!-- Test Series Card (Special Highlight) -->
+        <div onclick="location.href='test-series.html'" class="luxury-card relative overflow-hidden p-6 rounded-[2rem] flex items-center gap-5 bg-blue-600 text-white shadow-xl shadow-blue-200">
+            <div class="w-14 h-14 bg-white/20 text-white rounded-2xl flex items-center justify-center text-2xl backdrop-blur-sm">
                 <i class="fa-solid fa-file-signature"></i>
             </div>
             <div class="flex-1">
                 <h4 class="font-bold text-lg uppercase tracking-tight">Test Series</h4>
                 <p class="text-[11px] text-blue-100 font-semibold uppercase tracking-wider">Weekly Free Mocks</p>
             </div>
-            <div class="bg-amber-400 text-blue-900 text-[10px] font-black px-2 py-1 rounded-lg">LIVE</div>
+            <div class="bg-amber-400 text-blue-900 text-[10px] font-black px-2 py-1 rounded-lg shadow-md">LIVE</div>
             <i class="fa-solid fa-file-signature card-icon-bg" style="opacity: 0.1; color: white;"></i>
         </div>
     </main>
 
-    <!-- Bottom Navigation -->
+    <!-- Bottom Navigation Bar -->
     <footer class="fixed bottom-6 left-6 right-6 h-20 bg-white/80 backdrop-blur-xl border border-white/40 rounded-[2.2rem] shadow-2xl flex justify-around items-center px-6 z-50">
-        <div class="flex flex-col items-center text-blue-600 cursor-pointer">
+        <div onclick="location.href='index.html'" class="flex flex-col items-center text-blue-600 cursor-pointer">
             <i class="fa-solid fa-house-chimney text-xl"></i>
-            <span class="text-[9px] mt-1 font-bold uppercase tracking-tight">Home</span>
+            <span class="text-[9px] mt-1 font-bold uppercase">Home</span>
         </div>
-        <div class="flex flex-col items-center text-slate-400 cursor-pointer luxury-card p-2 rounded-xl border-none">
+        <div onclick="location.href='my-courses.html'" class="flex flex-col items-center text-slate-400 cursor-pointer">
             <i class="fa-solid fa-graduation-cap text-xl"></i>
-            <span class="text-[9px] mt-1 font-bold uppercase tracking-tight">Courses</span>
+            <span class="text-[9px] mt-1 font-bold uppercase">My Course</span>
         </div>
-        <div class="flex flex-col items-center text-slate-400 cursor-pointer">
-            <i class="fa-solid fa-user-gear text-xl"></i>
-            <span class="text-[9px] mt-1 font-bold uppercase tracking-tight">Profile</span>
+        <div onclick="location.href='profile.html'" class="flex flex-col items-center text-slate-400 cursor-pointer">
+            <i class="fa-solid fa-circle-user text-xl"></i>
+            <span class="text-[9px] mt-1 font-bold uppercase tracking-tighter">Profile</span>
         </div>
     </footer>
 
     <script>
         // Banner Auto-Switch Logic
         const content = [
-            { t1: "SSC GD", t2: "MISSION BATCH", color: "#1e293b", sub: "New Session 2026", btn: "Enroll Now" },
-            { t1: "RAILWAY", t2: "GRP D SPECIAL", color: "#1e3a8a", sub: "Free Study Material", btn: "Get Notes" },
-            { t1: "WEEKLY MOCK", t2: "LIVE SUNDAY", color: "#be123c", sub: "All India Rank", btn: "Start Now" }
+            { t1: "SSC GD", t2: "MISSION BATCH", color: "#1e293b", sub: "New Session 2026", btn: "Enroll Now", link: "my-courses.html" },
+            { t1: "RAILWAY", t2: "GRP D SPECIAL", color: "#1e3a8a", sub: "Free Study Material", btn: "Get Notes", link: "railway-exams.html" },
+            { t1: "WEEKLY MOCK", t2: "LIVE SUNDAY", color: "#be123c", sub: "All India Rank", btn: "Start Now", link: "test-series.html" }
         ];
 
         let idx = 0;
-        const banner = document.getElementById('banner-container');
+        const bannerContainer = document.getElementById('banner-container');
 
-        setInterval(() => {
+        function updateBanner() {
             idx = (idx + 1) % content.length;
-            banner.innerHTML = `
+            bannerContainer.innerHTML = `
                 <div class="banner-fade w-full h-full p-8 text-white flex flex-col justify-center relative" style="background-color: ${content[idx].color}">
-                    <span class="bg-blue-500 text-[10px] font-bold px-3 py-1 rounded-full w-fit mb-3 uppercase tracking-widest">${content[idx].sub}</span>
+                    <span class="bg-blue-500 text-[10px] font-bold px-3 py-1 rounded-full w-fit mb-3 uppercase tracking-widest font-sans">${content[idx].sub}</span>
                     <h2 class="text-3xl font-extrabold leading-tight uppercase">${content[idx].t1}<br><span class="text-blue-400">${content[idx].t2}</span></h2>
-                    <button class="mt-5 bg-white text-slate-900 w-fit px-8 py-2.5 rounded-2xl text-xs font-bold shadow-lg uppercase tracking-wider">${content[idx].btn}</button>
+                    <button onclick="location.href='${content[idx].link}'" class="mt-5 bg-white text-slate-900 w-fit px-8 py-2.5 rounded-2xl text-xs font-bold shadow-lg uppercase tracking-wider">${content[idx].btn}</button>
                 </div>
             `;
-        }, 4000);
+        }
+
+        setInterval(updateBanner, 4000);
     </script>
 </body>
 </html>
